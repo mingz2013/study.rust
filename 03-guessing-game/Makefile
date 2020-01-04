@@ -7,10 +7,19 @@ help:
 	@echo '   make help                           show help                          '
 	@echo '                                                                          '
 	@echo '   make build                          build                              '
+	@echo '   make run                            run                                '
+	@echo '   make check                          check                              ' 
 	@echo '                                                                          '
 	@echo '                                                                          '
 
 .PHONY: build
 build:
-	rustc main.rs
-	gcc main.c
+	cargo build
+	cargo build --release
+.PHONY: run
+run:
+	cargo run
+
+.PHONY: check
+check:
+	cargo check
